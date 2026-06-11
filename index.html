@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Performance Culture — A Field Guide to High Performance</title>
+<meta name="description" content="Welcome to the World of Performance — a field guide to the thirteen distinctions that make extraordinary performance reliable and repeatable." />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%230A0712'/%3E%3Cpath d='M12 4 L19 12 L12 20 L5 12 Z' fill='%239D6BFF'/%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/css/styles.css" />
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- Night sky -->
+<div class="bg-aurora" aria-hidden="true"><span class="bg-aurora__blob bg-aurora__blob--1"></span><span class="bg-aurora__blob bg-aurora__blob--2"></span></div>
+<canvas id="sky" class="bg-sky" aria-hidden="true"></canvas>
+
+<!-- Grain + grid overlays -->
+<div class="overlay-grid" aria-hidden="true"></div>
+<div class="overlay-grain" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="Performance Culture — home">
+    <span class="nav__mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3 L20 12 L12 21 L4 12 Z" /></svg>
+    </span>
+    <span class="nav__word">Performance&nbsp;Culture</span>
+  </a>
+
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#premise"><span class="nav__idx">00</span> Premise</a>
+    <a href="#language"><span class="nav__idx">01</span> The Language</a>
+    <a href="#field"><span class="nav__idx">02</span> The Field</a>
+    <a href="#closing"><span class="nav__idx">03</span> Closing</a>
+  </nav>
+
+  <a href="CRS's%20Performance%20Culture%20-%20Google%20Docs.pdf" target="_blank" rel="noopener" class="nav__cta">
+    <span>Complete version</span>
+    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO / PREMISE ===================== -->
+  <section class="hero" id="premise">
+    <div class="hero__bg" aria-hidden="true">
+      <img class="hero__vista" src="assets/img/hero.svg" alt="" />
+    </div>
+
+    <div class="hero__meta hero__meta--tr mono">
+      <span>13&nbsp;DISTINCTIONS</span>
+      <span>04&nbsp;MOVEMENTS</span>
+    </div>
+
+    <div class="hero__inner">
+      <p class="eyebrow mono reveal">
+        <span class="eyebrow__tick"></span> A field guide to high performance
+      </p>
+
+      <h1 class="hero__title">
+        <span class="line"><span data-scramble>Welcome to the</span></span>
+        <span class="line"><span data-scramble>World of</span></span>
+        <span class="line"><span data-scramble><em>Performance</em></span></span>
+      </h1>
+
+      <p class="hero__lede reveal">
+        A continued and reliable delivery of high performance requires a network of high-performing
+        peers who have agreed on a set of critical <span class="hl">Rules of the Game</span> —
+        purposefully and explicitly designed so that the extraordinary becomes repeatable.
+      </p>
+
+      <div class="hero__actions reveal">
+        <a href="#language" class="btn btn--primary">
+          <span>Begin reading</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+        <a href="#field" class="btn btn--ghost">
+          <span>Skip to the distinctions</span>
+        </a>
+      </div>
+    </div>
+
+    <a class="hero__scrollcue mono" href="#language" aria-label="Scroll to begin">
+      <span>SCROLL</span>
+      <span class="hero__scrollcue-line"></span>
+    </a>
+  </section>
+
+
+  <!-- ===================== THE LANGUAGE ===================== -->
+  <section class="chapter" id="language">
+    <div class="chapter__head container">
+      <p class="section-tag mono reveal"><span>§ 01</span> The Language</p>
+      <h2 class="chapter__title">
+        <span class="reveal-line">A shared language is the</span>
+        <span class="reveal-line">door into a new world.</span>
+      </h2>
+    </div>
+
+    <div class="container grid-12">
+      <div class="lang__lede col-span-7">
+        <p class="lead reveal">
+          In this network, people agree on a set of <span class="hl">distinctions</span> and speak the
+          same language — a so-called <span class="hl">Jargon</span> — the mastery of which results in a
+          fundamentally new <span class="hl">Way Of Being</span>.
+        </p>
+      </div>
+
+      <aside class="def col-span-5 reveal" aria-label="Definition of Jargon">
+        <header class="def__head mono">
+          <span>DEFINITION</span>
+          <span>n. /ˈdʒɑːɡən/</span>
+        </header>
+        <h3 class="def__term">Jargon</h3>
+        <p class="def__body">
+          Jargon, or technical language, is the specialized terminology associated with a particular
+          field or area of activity. Jargon is normally employed in a particular communicative context
+          and may not be well understood outside that context.
+        </p>
+      </aside>
+    </div>
+
+    <div class="container grid-12 lang__body">
+      <div class="col-span-7 col-start-1 prose reveal">
+        <p>
+          Similar to a high-performing sports team, a series of foundational distinctions critically
+          help you and your team to speak about, deliver and ask for what's required for high
+          performance. They are, in a way, a door into a distinct world — in this example, the specific
+          world of a given sport.
+        </p>
+        <p>
+          Imagine a great coach shouting cryptic instructions to his team on the field just before the
+          next play. While you and I might not grasp any of what is being communicated, these
+          instructions might unlock the team's next play and allow them to score the critical points.
+        </p>
+        <p>
+          <span class="hl">Time</span> and <span class="hl">team support</span> are the foundations
+          needed to begin training on a common set of rules, sequences and plays — the things that then
+          allow a high-performing team to execute said instructions in the heat and stress of the moment.
+        </p>
+        <p>
+          To reliably deliver high performance, we have identified a series of distinctions that have
+          emerged over the years as the key ingredients. You will hear about them often in your
+          conversations with your peers. Keep an eye out for them, and see if you can
+          <span class="emph">discover for yourself</span> how they let you unlock productivity at a
+          different level.
+        </p>
+      </div>
+
+      <figure class="pullquote col-span-5 reveal">
+        <blockquote>
+          “Treat it like a treasure map, where the distinctions are key markers to be
+          <span class="hl">uncovered</span> and <span class="hl">discovered</span>.”
+        </blockquote>
+      </figure>
+    </div>
+
+    <!-- Note to the reader -->
+    <div class="container">
+      <div class="note reveal">
+        <header class="note__head mono">
+          <span class="note__dot"></span> NOTE TO THE READER
+        </header>
+        <p class="note__body">
+          If you read this like any given corporate document, you will not gain access to what it
+          unlocks. However, if you treat it like a treasure map — where the distinctions are key markers
+          to be uncovered and discovered — you have a serious shot at fundamentally elevating what you,
+          and all of us as a team, are able to deliver.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== INTERLUDE ===================== -->
+  <section class="interlude" aria-label="Interlude">
+    <div class="interlude__bg"><img src="assets/img/interlude.svg" alt="" /></div>
+    <div class="interlude__veil"></div>
+    <div class="container interlude__content">
+      <p class="interlude__eyebrow mono reveal">THE LONG WALK</p>
+      <p class="interlude__line">
+        <span class="reveal-line"><span>Two minds, one long walk under the stars.</span></span>
+        <span class="reveal-line"><span>Thirteen markers between here and the <em>dawn</em>.</span></span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== THE FIELD ===================== -->
+  <section class="field" id="field">
+    <div class="field__intro container">
+      <p class="section-tag mono reveal"><span>§ 02</span> The Field</p>
+      <h2 class="field__title reveal">The Key Distinctions for Performance</h2>
+      <p class="field__sub reveal">
+        Here are the thirteen distinctions that make up a Performance Culture. Master them for reliable
+        access to extraordinary performance. Read them not as a checklist, but as markers on a map.
+      </p>
+    </div>
+
+    <!-- ticker of all thirteen markers -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Complete Work</span><span class="marquee__dot"></span><span>Ownership</span><span class="marquee__dot"></span><span>Demonstrated By</span><span class="marquee__dot"></span><span>By When</span><span class="marquee__dot"></span><span>The Burndown List</span><span class="marquee__dot"></span><span>Qualification</span><span class="marquee__dot"></span><span>Communication</span><span class="marquee__dot"></span><span>Alignment &amp; Enrollment</span><span class="marquee__dot"></span><span>Symptoms vs. Systems</span><span class="marquee__dot"></span><span>Mastering The Tools</span><span class="marquee__dot"></span><span>What I Measure Grows</span><span class="marquee__dot"></span><span>10x Results</span><span class="marquee__dot"></span><span>Dealing with Breakdowns</span><span class="marquee__dot"></span><span>Complete Work</span><span class="marquee__dot"></span><span>Ownership</span><span class="marquee__dot"></span><span>Demonstrated By</span><span class="marquee__dot"></span><span>By When</span><span class="marquee__dot"></span><span>The Burndown List</span><span class="marquee__dot"></span><span>Qualification</span><span class="marquee__dot"></span><span>Communication</span><span class="marquee__dot"></span><span>Alignment &amp; Enrollment</span><span class="marquee__dot"></span><span>Symptoms vs. Systems</span><span class="marquee__dot"></span><span>Mastering The Tools</span><span class="marquee__dot"></span><span>What I Measure Grows</span><span class="marquee__dot"></span><span>10x Results</span><span class="marquee__dot"></span><span>Dealing with Breakdowns</span><span class="marquee__dot"></span>
+      </div>
+    </div>
+
+    <div class="field__layout">
+
+      <!-- Sticky index rail -->
+      <aside class="rail" aria-label="Distinctions index">
+        <div class="rail__inner">
+          <p class="rail__label mono">INDEX</p>
+          <ol class="rail__list">
+            <li><a href="#d01" data-rail="d01"><span class="rail__n">01</span><span class="rail__t">Complete Work</span></a></li>
+            <li><a href="#d02" data-rail="d02"><span class="rail__n">02</span><span class="rail__t">Ownership</span></a></li>
+            <li><a href="#d03" data-rail="d03"><span class="rail__n">03</span><span class="rail__t">Demonstrated By</span></a></li>
+            <li><a href="#d04" data-rail="d04"><span class="rail__n">04</span><span class="rail__t">By When</span></a></li>
+            <li><a href="#d05" data-rail="d05"><span class="rail__n">05</span><span class="rail__t">The Burndown List</span></a></li>
+            <li><a href="#d06" data-rail="d06"><span class="rail__n">06</span><span class="rail__t">Qualification</span></a></li>
+            <li><a href="#d07" data-rail="d07"><span class="rail__n">07</span><span class="rail__t">Communication</span></a></li>
+            <li><a href="#d08" data-rail="d08"><span class="rail__n">08</span><span class="rail__t">Alignment &amp; Enrollment</span></a></li>
+            <li><a href="#d09" data-rail="d09"><span class="rail__n">09</span><span class="rail__t">Symptoms vs. Systems</span></a></li>
+            <li><a href="#d10" data-rail="d10"><span class="rail__n">10</span><span class="rail__t">Mastering The Tools</span></a></li>
+            <li><a href="#d11" data-rail="d11"><span class="rail__n">11</span><span class="rail__t">What I Measure Grows</span></a></li>
+            <li><a href="#d12" data-rail="d12"><span class="rail__n">12</span><span class="rail__t">10x Results</span></a></li>
+            <li><a href="#d13" data-rail="d13"><span class="rail__n">13</span><span class="rail__t">Dealing with Breakdowns</span></a></li>
+          </ol>
+        </div>
+      </aside>
+
+      <!-- Distinctions -->
+      <div class="markers">
+
+        <!-- Movement I -->
+        <section class="band" id="m1">
+          <div class="band__bg"><img src="assets/img/m1.svg" alt="" /></div>
+          <div class="band__veil"></div>
+          <div class="band__content">
+            <span class="band__n mono">M.I</span>
+            <h3 class="band__title">Defining the Work</h3>
+            <p class="band__desc">
+              Before anything can be delivered, it has to be defined. Five distinctions for turning a
+              fuzzy intention into something concrete enough to own, demonstrate and finish.
+            </p>
+            <span class="band__range mono">Distinctions 01 — 05</span>
+          </div>
+        </section>
+
+        <article class="marker" id="d01" data-index="01">
+          <div class="marker__aside">
+            <span class="marker__num mono">01</span>
+            <span class="marker__move mono">M.I — Defining the Work</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">Complete Work</h3>
+            <p class="marker__essence">
+              A milestone is not the mission. Work is complete only when the intended outcome is real,
+              in the hands of a customer, working as expected.
+            </p>
+            <div class="prose">
+              <p>Delivering Complete Work is the key to performance. A simple example:</p>
+              <p>
+                An engineer has finished a feature as intended and has tested it locally. While a
+                milestone in and of itself, this is <em>not</em> Complete Work. To understand the
+                distinction, you have to go back to what the original intention of this work was — and
+                was not.
+              </p>
+              <p>
+                The intention was not the technical completion of the feature itself, even if that part
+                was done to the reviewer's full satisfaction. The actual intention was to get this new
+                feature into the hands of a customer, working as expected.
+              </p>
+              <p>
+                Complete Work is the completion of a task <em>as it was intended</em> — as distinct from
+                how it was communicated — finished from beginning to end. In our example: documentation
+                completed, marketing having received all required information, sales people properly
+                trained, the feature rolled out in production with the necessary monitoring in place,
+                and finally one&nbsp;(1) customer brought on and now using the new feature successfully.
+              </p>
+              <p class="prose__kicker">That is Complete Work.</p>
+              <p>
+                A key tool that demonstrates Complete Work is a burndown list equipped with clear
+                Intentions, Demonstrated&nbsp;By's, and By&nbsp;Whens. <a href="#d05" class="ilink">Learn more →</a>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="marker" id="d02" data-index="02">
+          <div class="marker__aside">
+            <span class="marker__num mono">02</span>
+            <span class="marker__move mono">M.I — Defining the Work</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">Ownership</h3>
+            <p class="marker__essence">
+              Total command of a task from beginning to end — not doing it all yourself, but being able
+              to answer for all of it.
+            </p>
+            <div class="prose">
+              <p>A key tenet of performance is Ownership.</p>
+              <p>
+                Ownership is the quality of owning the related Burn Down List — a complete ledger of all
+                required tasks to be completed. Said differently: having total command over a specific
+                task, from beginning to end, so that if there are any questions about it, you are able to
+                give a concrete, concise answer (or able to get that answer with velocity).
+              </p>
+              <p>
+                When you find yourself diverting questions or feeling stuck in any way, those are most
+                often indicators that you are not owning the specific task as it was intended.
+              </p>
+              <p>
+                Ownership <em>does not</em> mean that you are doing all of the required tasks yourself —
+                to the contrary. Your performance is critically tied to being able to use available
+                company resources and to lead your peers to the completion of your owned Burn Down List.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="marker" id="d03" data-index="03">
+          <div class="marker__aside">
+            <span class="marker__num mono">03</span>
+            <span class="marker__move mono">M.I — Defining the Work</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">Demonstrated By</h3>
+            <p class="marker__essence">
+              Tether every ambition to the ground of reality. If it were true, name exactly what you
+              would see.
+            </p>
+            <div class="prose">
+              <p>
+                Demonstrated By is one of the most powerful distinctions of Performance Culture. Once
+                mastered, it will transform how you see not just the work you do, but how you see the
+                world in general. In essence, a Demonstrated By tethers you to the ground of reality.
+              </p>
+              <p>Here's what we mean by that. In any given project there are a myriad of intentions and goals one pursues:</p>
+              <p class="prose__kicker">“We want to be the #1 brand in the data world.”</p>
+              <p>
+                Of course this is an ambitious goal, and one probably everyone in the company would agree
+                is worth pursuing. But <em>what does it actually mean?</em> If we were on a call with,
+                say, 10 leaders from our company, do all 10 have the same idea in mind?
+              </p>
+              <p class="prose__kicker">Of course not.</p>
+              <p>
+                Any intention that has been aligned on, on any level, primarily exists in an ambiguous
+                “thought-state” until tethered to the ground of reality by one or more Demonstrated By's.
+                In this example, they might look like this:
+              </p>
+              <ol class="prose__numbered">
+                <li>When searching on Google for decisioning data, we consistently show up as the #1 non-paid result.</li>
+                <li>When asking an AI for help retrieving data for decisioning, our APIs are consistently in the top 3 response bullet points for GPT, Claude and Gemini.</li>
+                <li>When speaking to any underwriting specialist at Money20/20 and asking for the top data companies, we are reliably (80%+) the first data provider mentioned.</li>
+              </ol>
+              <p>
+                You might disagree about the perfect Demonstrated By's — but notice how they transform an
+                amorphous something into a result concretely recognizable <em>in reality</em>. True
+                success is measurable; the Demonstrated By is a tool of power to discover and communicate
+                the success criteria of your work.
+              </p>
+              <p>
+                Think about it: what would unambiguously demonstrate that you have delivered on the
+                intended outcome — that you delivered Complete Work? That is your Demonstrated By.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="marker" id="d04" data-index="04">
+          <div class="marker__aside">
+            <span class="marker__num mono">04</span>
+            <span class="marker__move mono">M.I — Defining the Work</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">By When</h3>
+            <p class="marker__essence">
+              A communication without a By When is just chatter. Organizations are held together by a
+              reliable network of By Whens.
+            </p>
+            <div class="prose">
+              <p>
+                By When is a powerful communication tool that creates a reliable foundation for
+                performance. A communication without a By When is just chatter
+                (<span class="quiet">“I'll get back to you asap!”</span>). A communication with a clear
+                By When opens the door to a different level of performance
+                (<span class="hl">“I'll get back to you by 5pm tomorrow.”</span>).
+              </p>
+              <p>
+                Once a By When has been delivered, the recipient can use it as a reliable building block
+                to build on top of, or as the moment to follow up. A committed communication with a By
+                When helps keep what needs to get done in reality — e.g. on a calendar.
+              </p>
+              <p>
+                Consider that a highly effective organization is held together by a highly reliable
+                network of By When's — its organizational commitments.
+              </p>
+              <p>
+                And consider that, as humans, we are fallible. Missing a By When is not in and of itself
+                an issue — but failing to communicate an updated, revised or revoked By When will
+                <em>reliably</em> reduce organizational performance.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="marker" id="d05" data-index="05">
+          <div class="marker__aside">
+            <span class="marker__num mono">05</span>
+            <span class="marker__move mono">M.I — Defining the Work</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">The Burndown List</h3>
+            <p class="marker__essence">
+              All you get is a sheet of paper. Point A to Point B — and it is fundamental to
+              accomplishing anything.
+            </p>
+            <div class="prose">
+              <p>Most companies will provide you with a range of project management tools.</p>
+              <p class="prose__shout">→ Here, all you get is a sheet of paper.</p>
+              <p>
+                Compared to the other points in this document, this might look like a ridiculous
+                distinction to add. The Burndown List finds its adjacent origins in the burndown chart
+                generally found in the Agile project-management community — a visual graph showing
+                remaining work versus time.
+              </p>
+              <p>
+                The Burndown List is a fancy name for a sheet of paper outlining the critical tasks
+                needed to get from Point&nbsp;A (where we are now) to Point&nbsp;B (where we intend to
+                be). It is <span class="hl">fundamental</span> in its nature — in the world of
+                performance, in the world of accomplishing anything.
+              </p>
+              <p>
+                Please do not step over this fact. Make sure you fully grasp — discover for yourself —
+                that this is so.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Movement II -->
+        <section class="band" id="m2">
+          <div class="band__bg"><img src="assets/img/m2.svg" alt="" /></div>
+          <div class="band__veil"></div>
+          <div class="band__content">
+            <span class="band__n mono">M.II</span>
+            <h3 class="band__title">Operating Together</h3>
+            <p class="band__desc">
+              Performance is a team sport. How we ask, how we communicate and how we enroll determines
+              whether a network of peers moves as one — or merely as many.
+            </p>
+            <span class="band__range mono">Distinctions 06 — 08</span>
+          </div>
+        </section>
+
+        <article class="marker" id="d06" data-index="06">
+          <div class="marker__aside">
+            <span class="marker__num mono">06</span>
+            <span class="marker__move mono">M.II — Operating Together</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">Qualification is the Enemy of Performance</h3>
+            <p class="marker__essence">
+              You become qualified by delivering Complete Work — not the other way around. Waiting to
+              feel “ready” is a hidden form of permission-seeking.
+            </p>
+            <div class="prose">
+              <p>
+                Qualification is the enemy of performance. We often wait to feel <em>qualified</em> — one
+                more certification, one more year of experience, one more sign-off — before we act, lead
+                or decide. That waiting is a quiet form of permission-seeking, and it caps performance
+                long before any real limit does.
+              </p>
+              <p>
+                The distinction is to notice when <span class="hl">“I'm not qualified yet”</span> is
+                running the show, and to choose ownership and action over credentials. Qualification
+                follows performance: you earn it by delivering Complete Work and owning outcomes, not by
+                collecting permissions in advance.
+              </p>
+              <p class="prose__note">
+                This does not mean acting recklessly or skipping genuine skill-building. It means
+                refusing to let the <em>feeling</em> of being under-qualified become the reason nothing
+                ships.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="marker" id="d07" data-index="07">
+          <div class="marker__aside">
+            <span class="marker__num mono">07</span>
+            <span class="marker__move mono">M.II — Operating Together</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">Communication — Intentional &amp; Effective</h3>
+            <p class="marker__essence">
+              A message sent is not a message landed. Communication is complete only when it is received
+              and acknowledged as intended.
+            </p>
+            <div class="prose">
+              <h4 class="prose__sub">Intentional Communication</h4>
+              <p>
+                You might have heard the old saying: “Don't ask for permission, ask for forgiveness.”
+                Intentional Communication is a special form of communication. Instead of saying
+                <span class="quiet">“Can I build a new pricing structure for this product?”</span>
+                consider saying:
+              </p>
+              <p class="prose__kicker">
+                “I intend to build a new pricing structure for this product. The reason is […]. Once
+                ready, I will brief Product, Sales and Finance and will report back here with next steps.”
+              </p>
+              <p>
+                This is the opposite of operating from a position of seeking approval — a “lean back,”
+                passive approach — to a lean-forward, active position. It is the practice of speaking
+                your intention clearly and giving the team an opportunity to chime in where needed. You
+                are never blocked.
+              </p>
+
+              <h4 class="prose__sub">Effective Communication</h4>
+              <p>
+                Effective Communication is the practice of communicating in such a way that the intended
+                message <em>lands</em> with its intended recipient.
+              </p>
+              <p>
+                You sending a message is not communication. You saying something on a call is not
+                communication. Only once your communication has been heard and acknowledged, as intended,
+                was the communication effective.
+              </p>
+              <p>
+                If this sounds very similar to Complete Work — you're right. It is in the same vein. The
+                best way to let someone know their communication was properly received is to “recreate”
+                it in your own words (<span class="quiet">“So if I understood you correctly, you are
+                saying […]”</span>) with the sender responding with a variant of
+                <span class="hl">“That's right.”</span>
+              </p>
+              <p>
+                Keep in mind that all the basics of Respectful Communication — being clear, honest and
+                polite, and avoiding language that is rude, aggressive or judgmental — apply here as they
+                do anywhere.
+              </p>
+
+              <h4 class="prose__sub">Complete Communication</h4>
+              <p>
+                Complete Communication closes the loop. Intentional Communication opens it (you state
+                your intention); Effective Communication lands it (it is heard as intended); Complete
+                Communication confirms it — both sides leave with the same, explicit next step, a clear
+                owner and a By&nbsp;When. A communication is only complete when nothing critical is left
+                implicit and there is an agreed action on the other side.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="marker" id="d08" data-index="08">
+          <div class="marker__aside">
+            <span class="marker__num mono">08</span>
+            <span class="marker__move mono">M.II — Operating Together</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">Alignment &amp; Enrollment</h3>
+            <p class="marker__essence">
+              Nothing happens without enrollment. Disagree and commit — it promotes action over
+              paralysis.
+            </p>
+            <div class="prose">
+              <p>
+                Nothing happens without alignment; nothing happens without enrollment. It is your job to
+                get alignment from your peers, your leaders and those who report to you. Any change,
+                adjustment, new invention or product — they all require enrollment, from those around you
+                and from your clients.
+              </p>
+              <p>
+                Communicating in such a way that they discover, for themselves, that what you are
+                proposing will benefit them — or support them or their organizations in fulfilling their
+                own intentions — is a key component of an enrollment conversation. Another is
+                acknowledging and dealing with considerations, concerns and disagreements.
+              </p>
+              <p>
+                Often it is not necessary for everyone to end up with the same conclusion. What is
+                required is acknowledging these considerations, concerns and disagreements. Once the
+                conversation is complete, a commitment is made by everyone: the next steps to take are
+                clear to all.
+              </p>
+              <p>
+                Important: an aligned commitment is not necessarily a compromise. And, most importantly,
+                <span class="hl">“disagree yet commit”</span> promotes action over paralysis. We all have
+                to be able to disagree, yet still commit.
+              </p>
+              <p class="prose__note">
+                Note: using “Force” is always an available tool in a leader's toolbox. Using “Force”
+                often, however, is an indicator of underdeveloped leadership skills.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Movement III -->
+        <section class="band" id="m3">
+          <div class="band__bg"><img src="assets/img/m3.svg" alt="" /></div>
+          <div class="band__veil"></div>
+          <div class="band__content">
+            <span class="band__n mono">M.III</span>
+            <h3 class="band__title">Leverage &amp; Clarity</h3>
+            <p class="band__desc">
+              The difference between effort and output. See the system beneath the symptom, master the
+              tools you own, and measure what is really so.
+            </p>
+            <span class="band__range mono">Distinctions 09 — 11</span>
+          </div>
+        </section>
+
+        <article class="marker" id="d09" data-index="09">
+          <div class="marker__aside">
+            <span class="marker__num mono">09</span>
+            <span class="marker__move mono">M.III — Leverage &amp; Clarity</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">Symptoms vs. Systems</h3>
+            <p class="marker__essence">
+              Symptoms have a gravitational pull. Performance is fixing the system, not endlessly
+              patching the symptom.
+            </p>
+            <div class="prose">
+              <p>
+                Symptoms have a gravitational pull. Often, when we encounter issues, the natural reflex
+                is to get in there — engaged, enthralled with the symptoms — and patch them up. Our CRM
+                is missing the right Customer IDs every few records? Let's set aside a recurring time to
+                correct those! It certainly sounds like that makes sense. A little later, this procedure
+                has become part of our Standard Operating Procedures.
+              </p>
+              <p>
+                The key to performance is to recognize when we are engaged with the symptoms and not
+                dealing with the systems causing them. There is no recipe for this; it is a practice.
+                Taking a step back and distinguishing the symptoms from their root causes takes courage,
+                and often requires engaging deeply with the subject matter.
+              </p>
+              <p>
+                Good indicators: noticing when manual tasks are being repeated without questioning, and
+                repeated inconsistencies occurring seemingly at random (which often have become a part of
+                everyday life).
+              </p>
+              <p>
+                Keep in mind that there are indeed times when the best decision is to treat the symptoms.
+                Turning that reflex into a conscious and communicated choice is the hallmark of good
+                leadership.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="marker" id="d10" data-index="10">
+          <div class="marker__aside">
+            <span class="marker__num mono">10</span>
+            <span class="marker__move mono">M.III — Leverage &amp; Clarity</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">Mastering The Tools I Own</h3>
+            <p class="marker__essence">
+              Tools are levers. Own them, master them, refine them — often you will know them better than
+              those who built them.
+            </p>
+            <div class="prose">
+              <p>
+                Proper tooling is a force multiplier. Just as levers allow us to lift weights that are
+                otherwise impossible to move, software tools allow us to deliver performance far beyond
+                what would have been possible without them.
+              </p>
+              <p>
+                As such, a major unlock is available through the mastery of the tool. When you are
+                concerned about performance, the choosing, setting up and using of your
+                tools-of-the-craft will have an outsized impact on you, your team and your peers'
+                performance.
+              </p>
+              <p class="prose__kicker">
+                Own your tools. Master them. Refine them — often you will know these better than those
+                who built them.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="marker" id="d11" data-index="11">
+          <div class="marker__aside">
+            <span class="marker__num mono">11</span>
+            <span class="marker__move mono">M.III — Leverage &amp; Clarity</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">What I Measure Grows</h3>
+            <p class="marker__essence">
+              There is no performance without measurement. The scoreboard decides — even when the early
+              numbers look terrible.
+            </p>
+            <div class="prose">
+              <p>
+                Performance only exists in the realm of measurement. There is no performance without
+                measurement.
+              </p>
+              <p>
+                Measurement often carries a connotation of getting trapped, of being monitored or
+                controlled. But in the world of performance, the scoreboard determines success or failure
+                — whether on the sports grounds or in organizations. Finding the right metrics is mostly
+                a science, and sometimes an art.
+              </p>
+              <p>
+                Support your Demonstrated By work — “what would unambiguously demonstrate that you have
+                delivered on the intended outcome?” — by developing the skill to create the appropriate
+                OKRs and/or KPIs that really reflect you hitting the mark. Know whether you are
+                progressing, stalling or regressing toward what you are out to achieve. Build a strong,
+                productive relationship with your metrics.
+              </p>
+              <p>
+                The right metrics are often uncomfortable at the beginning, and our natural instinct is
+                to shy away from them, as they are effectively “telling on ourselves.”
+              </p>
+              <p>
+                Here a leadership decision is needed: what are you more committed to — the “looking good,”
+                or the delivery of extraordinary performance? Understand that all leaders here are clear
+                that early metrics, more often than not, look terrible — and that the key is to measure
+                <span class="hl">what's so</span>, and increase performance together.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Movement IV -->
+        <section class="band" id="m4">
+          <div class="band__bg"><img src="assets/img/m4.svg" alt="" /></div>
+          <div class="band__veil"></div>
+          <div class="band__content">
+            <span class="band__n mono">M.IV</span>
+            <h3 class="band__title">Beyond the Machine</h3>
+            <p class="band__desc">
+              A well-run machine is the baseline, not the ambition. Reach for outsized wins — and turn
+              every breakdown into a breakthrough.
+            </p>
+            <span class="band__range mono">Distinctions 12 — 13</span>
+          </div>
+        </section>
+
+        <article class="marker" id="d12" data-index="12">
+          <div class="marker__aside">
+            <span class="marker__num mono">12</span>
+            <span class="marker__move mono">M.IV — Beyond the Machine</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">10x Results</h3>
+            <p class="marker__essence">
+              Beyond the well-run machine: carve out time for moves whose outcomes are inarguably 10x.
+            </p>
+            <div class="prose">
+              <p>
+                As leaders, our job is to manage work and get it to completion — establishing a well-run
+                machinery that delivers consistent, predictable and appropriate results.
+              </p>
+              <p>
+                We are asked to go beyond that. While the above is critically important, we expect our
+                leaders to reliably carve out time for what we call <span class="hl">10x Projects</span>.
+              </p>
+              <p>
+                These projects are self-discovered and self-ushered to completion, taken on to deliver
+                outsized wins for the organization. While there are no recipes for them, 10x Projects
+                have a clear reason for why they are 10x. For example, they create: 10x revenue growth,
+                10x efficiency in how we activate customers, or a 10x difference in compute costs. In
+                short — 10x Projects have outcomes that are inarguably 10x.
+              </p>
+              <p>
+                What there <em>is</em> a recipe for is creating the appropriate structure for yourself to
+                have the time to engage with the question: <span class="quiet">“What would deliver a 10x
+                move, improvement, increase or decrease in my area of expertise, or generally?”</span>
+              </p>
+              <p class="prose__kicker">
+                Outsized wins come from outsized commitments — big goals — and outsized efforts to make
+                those goals a reality.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="marker" id="d13" data-index="13">
+          <div class="marker__aside">
+            <span class="marker__num mono">13</span>
+            <span class="marker__move mono">M.IV — Beyond the Machine</span>
+          </div>
+          <div class="marker__main">
+            <h3 class="marker__title">Dealing with Breakdowns</h3>
+            <p class="marker__essence">
+              A breakdown is an opportunity for a breakthrough. Treat it as un-personal — and resolve it
+              fast.
+            </p>
+            <div class="prose">
+              <figure class="bigquote">
+                <blockquote>“Consider that all accomplishment is constituted by a series of resolved breakdowns.”</blockquote>
+                <figcaption>— Werner Erhard</figcaption>
+              </figure>
+              <p>
+                A breakdown is an opportunity for a breakthrough. There are generally two types that
+                interest us: Breakdowns with People and Breakdowns with Systems. Regardless of type,
+                leaders are adamant about dealing with them quickly. Unresolved issues lingering in the
+                background are a sure way to reduce an organization's potential for performance.
+              </p>
+              <p>
+                There's a specific view on breakdowns we've discovered to be particularly useful: viewing
+                them as inherently <span class="hl">not personal</span> — “they” are not out to get you —
+                is extremely empowering. Breakdowns are just things that are in the way of us achieving
+                what we want to achieve. Nothing more, nothing less.
+              </p>
+
+              <h4 class="prose__sub">Breakdowns with Systems</h4>
+              <p>
+                These are often systemic in nature — recall the difference between fixing the symptoms
+                versus the systems. A system's breakdown can usually be resolved in a mostly mechanical
+                way: a Burndown List is generated with the required steps for resolution, and the plan is
+                executed.
+              </p>
+              <p>
+                A key aspect of an outstanding leader is that they design systems following our
+                <span class="hl">“If it breaks, will you notice?”</span> principle — systems that raise
+                their issues before anyone else notices.
+              </p>
+
+              <h4 class="prose__sub">Breakdowns with People</h4>
+              <p>
+                While this is the last section of the document, it might as well have been the first.
+                Breakdowns with people — your peers — are an inevitable part of your experience here, and
+                frankly of life in general.
+              </p>
+              <p>
+                Somebody promised to get something done by a certain date and did not. You shared your
+                vision for the next steps and somebody thinks it's a terrible idea. You promised to get
+                something done and did not — worse, you didn't want to communicate it because you really
+                thought you'd make the deadline. Somebody bypassed you as team lead and is commandeering
+                your direct report. There are endless opportunities to “F things up,” and we all do it.
+              </p>
+              <p>
+                What differentiates a great leader is <em>how they deal with breakdowns</em>. Breakdowns
+                are never really about you and me; seeing them as truly un-personal is a key skill to
+                develop and practice — especially with Breakdowns with People.
+              </p>
+              <p>
+                Here's why. Just as our ancestors heard rustling in the bushes and assumed a predator was
+                about to pounce, we tend to see hidden meaning and agenda in the things that happen
+                around us. This tendency runs against <span class="hl">Hanlon's Razor</span>. Frank
+                didn't submit his work in time? He's out to get me. Mike sent some rude Slack messages?
+                He's forcing a reaction to get his way. These interpretations might have lots of support
+                — but they have one thing in common: they stand in the way of performance.
+              </p>
+              <p>
+                We pride ourselves on having picked great folks to work with, and we are fundamentally
+                clear that all of our people are here to deliver their best work. Focusing on the people
+                involved in a breakdown — their possible motivations and intentions — means going down an
+                unproductive rabbit hole that diverts from the core question:
+              </p>
+              <p class="prose__kicker">What actions — now — would resolve the breakdown?</p>
+
+              <div class="pointers">
+                <p class="pointers__label mono">USEFUL POINTERS WHEN FACED WITH A BREAKDOWN</p>
+                <ul class="pointers__list">
+                  <li>Don't deal with the breakdown when your blood pressure is high — get off the computer / phone / Slack and take a walk.</li>
+                  <li>Acknowledge the breakdown.</li>
+                  <li>Give your peers the benefit of the doubt (specifically in this remote day and age).</li>
+                  <li>Focus on what you are both committed to — company success, delivering great work — and resolve the breakdown.</li>
+                  <li>Use 5-day alignment: essentially, put a By When on an interpersonal breakdown.</li>
+                  <li>Put structures &amp; systems in place that support not running into the same breakdowns over and over again.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /markers -->
+    </div><!-- /field__layout -->
+  </section>
+
+
+  <!-- ===================== CLOSING ===================== -->
+  <section class="closing" id="closing">
+    <div class="container closing__inner">
+      <p class="section-tag section-tag--invert mono reveal"><span>§ 03</span> Closing</p>
+      <h2 class="closing__title reveal">When you are&nbsp;ready…</h2>
+      <p class="closing__lede reveal">
+        These distinctions are a door, not a destination. Read them like you might re-watch a favorite
+        film — each pass reveals something the last one couldn't. Take one or two, build them into how
+        you work, enroll the people around you, then return and repeat the cycle.
+      </p>
+      <div class="closing__actions reveal">
+        <a href="CRS's%20Performance%20Culture%20-%20Google%20Docs.pdf" target="_blank" rel="noopener" class="btn btn--invert">
+          <span>Read the complete version of Performance Culture</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <!-- ===================== CERTIFICATE ===================== -->
+      <section class="cert reveal" id="cert" aria-label="Certification">
+        <p class="section-tag section-tag--invert mono"><span>§ 03·B</span> Certification</p>
+        <h3 class="cert__title">Prove it. Earn your certificate.</h3>
+        <p class="cert__lede">
+          Under every distinction is an <strong>Apply&nbsp;it</strong> box — a real situation, not a
+          trivia question. Write how you would apply the distinction; an evaluator scores your answer
+          out of&nbsp;10 against the text on this page. Score <strong>8 or higher on all thirteen</strong>
+          to unlock a personalised certificate.
+        </p>
+
+        <div class="cert__panel">
+          <div class="cert__progress">
+            <div class="cert__count"><span data-cert-count>0</span><span class="cert__count-total">/ 13 mastered</span></div>
+            <div class="cert__bar" role="progressbar" aria-valuemin="0" aria-valuemax="13" aria-valuenow="0"><span class="cert__bar-fill" data-cert-fill></span></div>
+            <ol class="cert__dots" data-cert-dots aria-hidden="true"></ol>
+          </div>
+
+          <div class="cert__form">
+            <label class="cert__label mono" for="cert-name">Name on certificate</label>
+            <div class="cert__row">
+              <input id="cert-name" class="cert__input" type="text" maxlength="42" placeholder="Your full name" autocomplete="name" />
+              <button class="cert__btn" type="button" data-cert-download disabled>
+                <span>Download certificate</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg>
+              </button>
+            </div>
+            <p class="cert__lock" data-cert-lock>🔒 Locked — pass all 13 application checks (8/10+) to unlock your certificate.</p>
+          </div>
+        </div>
+      </section>
+
+      <ul class="closing__index reveal" aria-label="All distinctions">
+        <li><a href="#d01"><span class="mono">01</span> Complete Work</a></li>
+        <li><a href="#d02"><span class="mono">02</span> Ownership</a></li>
+        <li><a href="#d03"><span class="mono">03</span> Demonstrated By</a></li>
+        <li><a href="#d04"><span class="mono">04</span> By When</a></li>
+        <li><a href="#d05"><span class="mono">05</span> The Burndown List</a></li>
+        <li><a href="#d06"><span class="mono">06</span> Qualification</a></li>
+        <li><a href="#d07"><span class="mono">07</span> Communication</a></li>
+        <li><a href="#d08"><span class="mono">08</span> Alignment &amp; Enrollment</a></li>
+        <li><a href="#d09"><span class="mono">09</span> Symptoms vs. Systems</a></li>
+        <li><a href="#d10"><span class="mono">10</span> Mastering The Tools</a></li>
+        <li><a href="#d11"><span class="mono">11</span> What I Measure Grows</a></li>
+        <li><a href="#d12"><span class="mono">12</span> 10x Results</a></li>
+        <li><a href="#d13"><span class="mono">13</span> Dealing with Breakdowns</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="nav__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 3 L20 12 L12 21 L4 12 Z" /></svg>
+      </span>
+      <span>Performance&nbsp;Culture</span>
+    </div>
+    <p class="footer__line mono">A FIELD GUIDE TO HIGH PERFORMANCE · 13 DISTINCTIONS · 04 MOVEMENTS</p>
+    <a href="#top" class="footer__top mono">BACK TO TOP ↑</a>
+  </div>
+</footer>
+
+<!-- GSAP + Lenis -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/quiz.js"></script>
+</body>
+</html>
