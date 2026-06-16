@@ -5,11 +5,11 @@
 
 /* ---------- TOKENS ---------- */
 :root{
-  /* surfaces — deep midnight indigo-violet (Story Night) */
-  --bg:        #08061A;
-  --bg-1:      #0C0922;
-  --bg-2:      #130E2C;
-  --bg-3:      #1A1340;
+  /* surfaces — deep violet-black (CRS) */
+  --bg:        #0A0712;
+  --bg-1:      #0E0A1A;
+  --bg-2:      #140E24;
+  --bg-3:      #1B1432;
 
   /* ink — cool lavender whites */
   --ink:       #EEEAF7;
@@ -93,7 +93,7 @@ ul,ol{ list-style:none; }
   position:fixed; inset:0;
   left:50%; transform:translateX(-50%);
   width:min(100% - 2*var(--pad), var(--container));
-  pointer-events:none; z-index:1; opacity:.18;
+  pointer-events:none; z-index:1; opacity:.5;
   background-image:repeating-linear-gradient(90deg,
     var(--line) 0 1px, transparent 1px calc(100%/6));
   mask-image:linear-gradient(180deg, transparent, #000 8%, #000 92%, transparent);
@@ -617,15 +617,12 @@ ul,ol{ list-style:none; }
    EVOLVING BACKGROUND
    ================================================================= */
 .bg-aurora{ position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
-.bg-aurora__blob{ position:absolute; border-radius:50%; filter:blur(110px); mix-blend-mode:screen; will-change:transform; }
-.bg-aurora__blob--1{ width:60vw; height:60vw; left:-14vw; top:-16vw;
-  background:radial-gradient(circle, rgba(140,96,235,.36), transparent 62%); opacity:.55; }
-.bg-aurora__blob--2{ width:52vw; height:52vw; right:-16vw; top:50vh;
-  background:radial-gradient(circle, rgba(205,196,255,.24), transparent 62%); opacity:.45; }
+.bg-aurora__blob{ position:absolute; border-radius:50%; filter:blur(100px); mix-blend-mode:screen; will-change:transform; }
+.bg-aurora__blob--1{ width:62vw; height:62vw; left:-12vw; top:-14vw;
+  background:radial-gradient(circle, rgba(157,107,255,.46), transparent 62%); opacity:.6; }
+.bg-aurora__blob--2{ width:54vw; height:54vw; right:-16vw; top:48vh;
+  background:radial-gradient(circle, rgba(196,150,255,.30), transparent 62%); opacity:.5; }
 @media (max-width:760px){ .bg-aurora__blob{ filter:blur(70px); } }
-
-/* living starfield (twinkle + shooting stars + faint constellations) */
-.bg-sky{ position:fixed; inset:0; z-index:0; pointer-events:none; }
 
 /* hero vista image (behind the network canvas) */
 .hero__vista{ position:absolute; inset:-6% 0 0 0; width:100%; height:112%; object-fit:cover; opacity:.92; z-index:0; will-change:transform; }
@@ -712,6 +709,12 @@ ul,ol{ list-style:none; }
 .cert__title{ margin-top:22px; font-family:var(--font-display); font-weight:600; font-size:clamp(1.9rem,4.5vw,3.2rem); line-height:1.02; letter-spacing:-.03em; color:var(--paper-ink); }
 .cert__lede{ margin-top:20px; max-width:62ch; font-size:clamp(1rem,1.5vw,1.18rem); line-height:1.6; color:#3a2d57; }
 .cert__lede strong{ color:var(--paper-ink); font-weight:600; }
+.cert__cta{ margin-top:28px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+.cert__start{ display:inline-flex; align-items:center; gap:10px; padding:15px 28px; border-radius:100px; border:none; cursor:pointer; background:var(--acc-deep); color:#fff; font-size:15px; font-weight:600; letter-spacing:.01em; transition:transform .25s var(--ease), box-shadow .25s, background .25s; }
+.cert__start svg{ stroke:currentColor; fill:none; stroke-width:1.8; transition:transform .25s var(--ease); }
+.cert__start:hover{ background:#6a34c8; transform:translateY(-2px); box-shadow:0 16px 40px -16px rgba(122,63,224,.7); }
+.cert__start:hover svg{ transform:translateX(3px); }
+.cert__cta-hint{ font-size:12.5px; color:#6b5f8c; }
 .cert__panel{
   margin-top:36px; border:1px solid rgba(122,63,224,.22); border-radius:16px;
   background:linear-gradient(180deg, rgba(255,255,255,.6), rgba(243,236,251,.5));

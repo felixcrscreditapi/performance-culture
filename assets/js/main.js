@@ -238,98 +238,64 @@
     if (el) secIO.observe(el);
   });
 
-  /* ---------- Living starfield (Story Night) ---------- */
-  const sky = document.getElementById("sky");
-  if (sky) {
-    const ctx = sky.getContext("2d");
-    let w = 0, h = 0, dpr = 1, stars = [], links = [], shoot = [], running = false, rafId = 0;
-    const t0 = performance.now();
+  /* ---------- Hero network canvas ---------- */
+  const canvas = document.getElementById("net");
+  if (canvas && !reduceMotion) {
+    const ctx = canvas.getContext("2d");
+    const host = canvas.parentElement;
+    let w = 0, h = 0, dpr = 1, nodes = [], running = false, rafId = 0;
+    const LINK = 150;
 
     function size() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = window.innerWidth; h = window.innerHeight;
-      sky.width = w * dpr; sky.height = h * dpr;
+      const r = host.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.max(60, Math.min(230, Math.floor((w * h) / 6800)));
-      stars = [];
-      for (let i = 0; i < count; i++) {
-        const bright = Math.random() < 0.16;
-        const roll = Math.random();
-        stars.push({
-          x: Math.random() * w, y: Math.random() * h * 0.94,
-          r: bright ? 1.0 + Math.random() * 1.7 : 0.4 + Math.random() * 1.0,
-          a: 0.22 + Math.random() * 0.62, tw: 0.5 + Math.random() * 1.8, ph: Math.random() * 6.28,
-          bright: bright,
-          col: roll < 0.10 ? "255,217,138" : roll < 0.20 ? "185,155,255" : "238,240,255",
-        });
-      }
-      // faint constellation links between a few nearby bright stars (network of peers)
-      links = [];
-      const bs = stars.filter((s) => s.bright);
-      for (let i = 0; i < bs.length; i++) {
-        for (let j = i + 1; j < bs.length; j++) {
-          const d = Math.hypot(bs[i].x - bs[j].x, bs[i].y - bs[j].y);
-          if (d < 190 && Math.random() < 0.5) links.push([bs[i], bs[j], d]);
-        }
-      }
+      const count = Math.max(26, Math.min(64, Math.floor((w * h) / 17000)));
+      nodes = Array.from({ length: count }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.26, vy: (Math.random() - 0.5) * 0.26,
+      }));
     }
 
-    function spawnShoot() {
-      const fromLeft = Math.random() < 0.5;
-      shoot.push({
-        x: fromLeft ? -40 : w + 40, y: Math.random() * h * 0.5,
-        vx: (fromLeft ? 1 : -1) * (6 + Math.random() * 4), vy: 2 + Math.random() * 2,
-        life: 0, max: 55 + Math.random() * 35,
-      });
-    }
-
-    function draw(now) {
-      const t = (now - t0) / 1000;
+    function tick() {
+      if (!running) return;
       ctx.clearRect(0, 0, w, h);
-      // constellation links
-      ctx.lineWidth = 1;
-      for (const [a, b, d] of links) {
-        ctx.strokeStyle = "rgba(157,107,255," + ((1 - d / 190) * 0.14).toFixed(3) + ")";
-        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      for (const n of nodes) {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
       }
-      // stars
-      for (const s of stars) {
-        const a = reduceMotion ? s.a : s.a * (0.5 + 0.5 * Math.sin(t * s.tw + s.ph));
-        if (s.bright) {
-          ctx.fillStyle = "rgba(" + s.col + "," + (a * 0.16).toFixed(3) + ")";
-          ctx.beginPath(); ctx.arc(s.x, s.y, s.r * 4.5, 0, 6.2832); ctx.fill();
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const d = Math.hypot(dx, dy);
+          if (d < LINK) {
+            ctx.strokeStyle = "rgba(157,107,255," + ((1 - d / LINK) * 0.2).toFixed(3) + ")";
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
         }
-        ctx.fillStyle = "rgba(" + s.col + "," + a.toFixed(3) + ")";
-        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.2832); ctx.fill();
       }
-      // shooting stars
-      for (let j = shoot.length - 1; j >= 0; j--) {
-        const p = shoot[j]; p.x += p.vx; p.y += p.vy; p.life++;
-        const k = 1 - p.life / p.max;
-        if (k <= 0) { shoot.splice(j, 1); continue; }
-        const tx = p.x - p.vx * 5, ty = p.y - p.vy * 5;
-        const g = ctx.createLinearGradient(p.x, p.y, tx, ty);
-        g.addColorStop(0, "rgba(238,240,255," + (0.85 * k).toFixed(2) + ")");
-        g.addColorStop(1, "rgba(238,240,255,0)");
-        ctx.strokeStyle = g; ctx.lineWidth = 1.6;
-        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(tx, ty); ctx.stroke();
+      for (const n of nodes) {
+        ctx.fillStyle = "rgba(236,237,239,0.45)";
+        ctx.beginPath(); ctx.arc(n.x, n.y, 1.3, 0, 6.2832); ctx.fill();
       }
+      rafId = requestAnimationFrame(tick);
     }
 
-    function loop(now) { if (!running) return; draw(now); rafId = requestAnimationFrame(loop); }
-    function play() { if (!running && !reduceMotion) { running = true; rafId = requestAnimationFrame(loop); } }
+    function play() { if (!running) { running = true; tick(); } }
     function pause() { running = false; cancelAnimationFrame(rafId); }
 
     size();
-    if (reduceMotion) {
-      draw(performance.now()); // static starfield
-    } else {
-      play();
-      setInterval(() => { if (running && Math.random() < 0.55) spawnShoot(); }, 4200);
-    }
+    play();
     let rt;
-    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { size(); if (reduceMotion) draw(performance.now()); }, 200); });
-    document.addEventListener("visibilitychange", () => { document.hidden ? pause() : play(); });
+    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(size, 200); });
+    new IntersectionObserver((es) => {
+      es.forEach((e) => (e.isIntersecting ? play() : pause()));
+    }, { threshold: 0 }).observe(host);
   }
 
   /* refresh triggers after full load (fonts/images) */

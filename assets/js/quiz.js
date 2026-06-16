@@ -199,6 +199,8 @@
     certEls.name = document.getElementById("cert-name");
     certEls.btn = document.querySelector("[data-cert-download]");
     certEls.lock = document.querySelector("[data-cert-lock]");
+    certEls.start = document.querySelector("[data-cert-start]");
+    certEls.startLabel = document.querySelector("[data-cert-start-label]");
     if (!certEls.dots) return;
 
     QUIZ.forEach(function (item) {
@@ -218,7 +220,22 @@
       });
     }
     if (certEls.btn) certEls.btn.addEventListener("click", onDownload);
+    if (certEls.start) certEls.start.addEventListener("click", onStart);
     updateCert(false);
+  }
+
+  // jump to the first not-yet-passed "Apply it" question (the quiz that gates the certificate)
+  function onStart() {
+    var target = null;
+    for (var i = 0; i < QUIZ.length; i++) {
+      if (!(state[QUIZ[i].id] && state[QUIZ[i].id].passed)) { target = document.getElementById("quiz-" + QUIZ[i].id); break; }
+    }
+    if (!target) target = document.getElementById("quiz-" + QUIZ[0].id);
+    if (!target) return;
+    if (window.lenis && window.lenis.scrollTo) window.lenis.scrollTo(target, { offset: -90, duration: 1.2 });
+    else target.scrollIntoView({ behavior: "smooth", block: "center" });
+    var input = target.querySelector(".quiz__input");
+    if (input) setTimeout(function () { try { input.focus({ preventScroll: true }); } catch (e) {} }, 750);
   }
 
   function refreshButton() {
@@ -246,6 +263,11 @@
         : "🔒 Locked — pass all 13 application checks (8/10+) to unlock your certificate.";
     }
     refreshButton();
+    if (certEls.startLabel) {
+      certEls.startLabel.textContent = done === 0 ? "Take the challenge"
+        : done >= TOTAL ? "Review your answers"
+        : "Continue — " + (TOTAL - done) + " to go";
+    }
 
     if (unlocked && fireConfetti && !justUnlocked) {
       justUnlocked = true;

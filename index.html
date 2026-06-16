@@ -17,9 +17,8 @@
 </head>
 <body>
 
-<!-- Night sky -->
+<!-- Evolving background -->
 <div class="bg-aurora" aria-hidden="true"><span class="bg-aurora__blob bg-aurora__blob--1"></span><span class="bg-aurora__blob bg-aurora__blob--2"></span></div>
-<canvas id="sky" class="bg-sky" aria-hidden="true"></canvas>
 
 <!-- Grain + grid overlays -->
 <div class="overlay-grid" aria-hidden="true"></div>
@@ -57,6 +56,8 @@
   <section class="hero" id="premise">
     <div class="hero__bg" aria-hidden="true">
       <img class="hero__vista" src="assets/img/hero.svg" alt="" />
+      <canvas id="net"></canvas>
+      <div class="hero__scan"></div>
     </div>
 
     <div class="hero__meta hero__meta--tr mono">
@@ -189,10 +190,10 @@
     <div class="interlude__bg"><img src="assets/img/interlude.svg" alt="" /></div>
     <div class="interlude__veil"></div>
     <div class="container interlude__content">
-      <p class="interlude__eyebrow mono reveal">THE LONG WALK</p>
+      <p class="interlude__eyebrow mono reveal">THE MAP</p>
       <p class="interlude__line">
-        <span class="reveal-line"><span>Two minds, one long walk under the stars.</span></span>
-        <span class="reveal-line"><span>Thirteen markers between here and the <em>dawn</em>.</span></span>
+        <span class="reveal-line"><span>A shared language gives you markers.</span></span>
+        <span class="reveal-line"><span>Here is the <em>map</em>.</span></span>
       </p>
     </div>
   </section>
@@ -205,6 +206,8 @@
       <p class="field__sub reveal">
         Here are the thirteen distinctions that make up a Performance Culture. Master them for reliable
         access to extraordinary performance. Read them not as a checklist, but as markers on a map.
+        Under each one you'll find an <strong>Apply&nbsp;it</strong> box — answer all thirteen to earn
+        your certificate.
       </p>
     </div>
 
@@ -905,11 +908,19 @@
         <p class="section-tag section-tag--invert mono"><span>§ 03·B</span> Certification</p>
         <h3 class="cert__title">Prove it. Earn your certificate.</h3>
         <p class="cert__lede">
-          Under every distinction is an <strong>Apply&nbsp;it</strong> box — a real situation, not a
-          trivia question. Write how you would apply the distinction; an evaluator scores your answer
-          out of&nbsp;10 against the text on this page. Score <strong>8 or higher on all thirteen</strong>
-          to unlock a personalised certificate.
+          Earning the certificate <strong>is</strong> the quiz: each of the thirteen distinctions above
+          has an <strong>Apply&nbsp;it</strong> box with a real situation. Write how you would apply the
+          distinction and an evaluator scores your answer out of&nbsp;10 against the text on this page.
+          Score <strong>8 or higher on all thirteen</strong> to unlock a personalised certificate.
         </p>
+
+        <div class="cert__cta">
+          <button class="cert__start" type="button" data-cert-start>
+            <span data-cert-start-label>Take the challenge</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <span class="cert__cta-hint">13 questions · one beneath each distinction</span>
+        </div>
 
         <div class="cert__panel">
           <div class="cert__progress">
